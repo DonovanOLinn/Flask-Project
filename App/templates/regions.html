@@ -1,0 +1,21 @@
+{% extends 'Components/index.html' %}
+
+{%block picture%}
+<h2> This is {{reg_text}}</h2>
+{%endblock picture%}
+
+
+{%block Description%}
+<form method="POST">
+    <input placeholder="Type a region" name="reg_text">
+    <input type="submit">
+</form>
+<form method="POST">
+    <input placeholder="Pokemon range" name="reg_range">
+    <input type="submit">
+</form>
+<h4>Here is a list of regions {{region_list}}</h4>
+    {% for i in poke_list %}
+        <h5> {{ i }} </h5>
+    {%endfor%}
+{%endblock Description%}

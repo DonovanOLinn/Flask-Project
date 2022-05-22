@@ -1,0 +1,24 @@
+{% extends 'Components/index.html' %}
+
+{% block Description %}
+<form method="POST">
+    <input placeholder="Type a Pokemon" name="text">
+    <input type="submit">
+</form>
+<h2> This is {{ my_pokemon.name}}</h1>
+<h2> It is a {{ my_pokemon.types}} type</h1>
+<h2> It is about {{ my_pokemon.height}} poke height tall</h1>
+<h2> It weight about {{ my_pokemon.weight}} poke pounds</h1>
+<h2> When you find one, it will have {{ my_pokemon.base_experience}} experience</h1>
+<h2> It's identity tag is {{ my_pokemon.ident}}</h1>
+<h2> And, Here are some of its moves {{my_pokemon.abilities}}</h1>
+
+{% endblock Description %}
+
+{%block name%}
+<h1> {{ my_pokemon.name}} </h1>
+{%endblock name%}
+
+{%block picture%}
+    <img src="{{my_pokemon.sprite}}" alt="PokePicture" style="width:300px;height:300px;">
+{%endblock picture%}
