@@ -5,6 +5,7 @@ from .services import Pokemon
 
 
 
+
 @app.route('/')
 def home():
 
@@ -16,7 +17,7 @@ def home():
 
     return render_template('main_page.html', my_pokemon=my_pokemon)
 
-
+#Donovan, You need to refactor this. This is not good code.
 @app.route('/', methods=['POST', 'GET'])
 def home_post():
     try:
@@ -40,6 +41,9 @@ def home_post():
         my_pokemon.name = 'ERROR ERROR NO POKEMON WITH THAT NAME EXISTS. PLEASE TRY AGAIN'
         return render_template('main_page.html', my_pokemon=my_pokemon)
 
+
+
+
 @app.route('/regions', methods=['POST', 'GET'])
 def regions():
     try:
@@ -56,8 +60,6 @@ def regions():
         for i in range(len(region_list)):
             if reg_text == region_list[i]:
                 ind = i + 1
-
-
 
         data = r.get(f'https://pokeapi.co/api/v2/generation/{ind}/')
         if data.status_code == 200:
